@@ -46,6 +46,7 @@ uint8_t       buttonState_a[NCONTADORES] ;
 uint8_t       contador_a[NCONTADORES];  
 bool          flagContador_a;
 
+int           pageDisplay_g;
 
 uint32_t      contador_g[NCONTADORES];
 
@@ -69,6 +70,7 @@ void  initVariablesControl() {
   tsTimer_a           = 0 ;
   counterTsUp_a       = 0 ;
   flagContador_a      = false ;
+  pageDisplay_g       = 0 ;
  
   initContadores();
  
@@ -219,6 +221,13 @@ void  readDigitalOutput() {
 void incrementaContadores() {
   if ( (++tsTimer_a)%100 == 0 ) {
     counterTsUp_a++;
+
+    if ( (counterTsUp_a%5) == 0 ) {
+      if ( ++pageDisplay_g == 3 ) {
+        pageDisplay_g = 0 ;
+      }
+    }    
+    
   }
   
 };

@@ -37,7 +37,9 @@ void CDisplayLCD::begin(){
 }  
 
 void CDisplayLCD::init() {
-  lcd_a->begin();
+  lcd_a->init();
+  lcd_a->init();
+  lcd_a->clear();  
   lcd_a->backlight();
 }
 

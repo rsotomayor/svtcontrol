@@ -20,6 +20,8 @@
 
 #include <Arduino.h>
 #include "mydef.h"
+#include "command.h"
+
 #include "cdisplaylcd.h"
 #include "ccontrol.h"
 
@@ -318,19 +320,142 @@ void writeModBusMap() {
 
 void  setuplcd() {
   mydisplay_g.init();
-  mydisplay_g.setCursor(0, 3);
-  mydisplay_g.print(F("V"));
+
+  mydisplay_g.setCursor(0,0);
+  mydisplay_g.print("                     ");
+
+  mydisplay_g.setCursor(0,0);
+  mydisplay_g.print(F("V:"));
   mydisplay_g.print(VERSION_SOFTWARE);
 }
 
 
 void displayLCDControl() {
-  String strDisplay;
-  
 
-  strDisplay = millis();
-  mydisplay_g.setCursor(0,1);
-  mydisplay_g.print("                     ");
-  mydisplay_g.print(strDisplay.c_str());
+  displayLCDPage(pageDisplay_g);
+
   
 }
+
+
+void displayLCDPage(int page_p) {
+  
+ 
+  if ( page_p == 0 ) {
+    
+    String strDisplay;
+    strDisplay = counterTsUp_a;
+
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print(F("V:"));
+    mydisplay_g.print(VERSION_SOFTWARE);
+    mydisplay_g.print(" PAGE: "+String(page_p));
+    
+    mydisplay_g.setCursor(0,1);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,2);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print(strDisplay.c_str());
+
+
+    
+  } else if ( page_p == 1 ) {
+    
+
+    String strDisplay;
+    strDisplay = counterTsUp_a;
+
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print(F("V:"));
+    mydisplay_g.print(VERSION_SOFTWARE);
+    mydisplay_g.print(" PAGE: "+String(page_p));
+
+    mydisplay_g.setCursor(0,1);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,2);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print(strDisplay.c_str());
+
+    
+  } else if ( page_p == 2 ) {
+  
+    String strDisplay;
+    strDisplay = counterTsUp_a;
+
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print(F("V:"));
+    mydisplay_g.print(VERSION_SOFTWARE);
+    mydisplay_g.print(" PAGE: "+String(page_p));
+
+    mydisplay_g.setCursor(0,1);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,2);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print(strDisplay.c_str());
+  
+
+  } else if ( page_p == 3 ) {
+    
+    String strDisplay;
+    strDisplay = counterTsUp_a;
+
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print(F("V:"));
+    mydisplay_g.print(VERSION_SOFTWARE);
+    mydisplay_g.print(" PAGE: "+String(page_p));
+
+    mydisplay_g.setCursor(0,1);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,2);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print(strDisplay.c_str());
+    
+    
+  } else {
+    
+    String strDisplay;
+    strDisplay = counterTsUp_a;
+
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,0);
+    mydisplay_g.print(F("V:"));
+    mydisplay_g.print(VERSION_SOFTWARE);
+    mydisplay_g.print(" **PAGE: "+String(page_p));
+
+    mydisplay_g.setCursor(0,1);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,2);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print("                    ");
+    mydisplay_g.setCursor(0,3);
+    mydisplay_g.print(strDisplay.c_str());
+    
+    
+  }
+  
+  
+}
+
+

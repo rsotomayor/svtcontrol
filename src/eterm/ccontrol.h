@@ -44,6 +44,7 @@ extern unsigned  long      estadooutput_a;
 extern unsigned  long      estadorelay_a;
 extern unsigned  long      counterTsUp_a;
 extern unsigned  long      tsTimer_a;
+extern int                 pageDisplay_g;
 
 extern uint32_t            contador_g[];
 extern float               temperaturaagua_a[]; 

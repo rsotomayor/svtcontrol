@@ -41,7 +41,7 @@ String strKeyCommand_g;
 
 //take care of some special events
 void keypadEvent(KeypadEvent key){
-  //~ Serial.print("KEYPAD");
+  Serial.print("KEYPAD");
   switch (keypad_g.getState()){
     case PRESSED:
       //~ Serial.println(key);SLOGGER

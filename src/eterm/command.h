@@ -25,7 +25,8 @@
 void      rxDataDTU() ;
 uint16_t	crc_calc(char *request,char length_p);
 void      writeModBusMap();
-
+void      setuplcd();
+void      displayLCDPage(int page_p);
 
 #endif
 

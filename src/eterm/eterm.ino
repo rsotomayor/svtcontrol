@@ -45,7 +45,7 @@ void setup()
   wdt_enable(WDTO_4S);
   Serial.println(F("SETUP OK"));
   
-  analogRead(A0);
+  setuplcd();
   
 }
 
@@ -64,6 +64,9 @@ void loop() {
   
   writeModBusMap();           // Escribe variables en arreglo ModBus
   rxDataDTU();                // Lee ModBus desde la DTU 
+  
+  Serial.println("Ejecutando");
   wdt_reset();                // Wach Dog Timer, tiene que llegar acá al cabo de 4 seg
+  delay(1000);
 
 }
