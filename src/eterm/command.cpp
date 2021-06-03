@@ -375,7 +375,7 @@ void displayLCDPage(int page_p) {
     mydisplay_g.setCursor(0,0);
     mydisplay_g.print(F("V:"));
     mydisplay_g.print(VERSION_SOFTWARE);
-    mydisplay_g.print(" PAGE: "+String(page_p));
+    mydisplay_g.print(" TEST: "+String(page_p));
 
     mydisplay_g.setCursor(0,1);
     mydisplay_g.print("                    ");
@@ -419,7 +419,7 @@ void displayLCDPage(int page_p) {
     mydisplay_g.setCursor(0,0);
     mydisplay_g.print(F("V:"));
     mydisplay_g.print(VERSION_SOFTWARE);
-    mydisplay_g.print(" PAGE: "+String(page_p));
+    mydisplay_g.print(" TEST: "+String(page_p));
 
     mydisplay_g.setCursor(0,1);
     mydisplay_g.print("                    ");
@@ -457,5 +457,3 @@ void displayLCDPage(int page_p) {
   
   
 }
-
-
